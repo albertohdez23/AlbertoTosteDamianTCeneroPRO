@@ -15,8 +15,9 @@ public class AlbertoTosteDamianTCeneroPRO {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("un sout hola");
-        System.out.println("Hola alberto");
+        
+        NumAleatorio numSecreto=new NumAleatorio(10, 1);
+        System.out.println(numSecreto.getNum());
     }
     
 }

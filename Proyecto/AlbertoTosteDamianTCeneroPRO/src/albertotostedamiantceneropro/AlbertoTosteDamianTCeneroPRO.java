@@ -14,7 +14,10 @@ import java.util.Scanner;
 public class AlbertoTosteDamianTCeneroPRO {
 
     /**
-     * @param args the command line arguments
+     * Este metodo inicia la partida e interactua con el jugador
+     * Dependiendo de la opcion elegida por el jugador, el programa iniciara
+     * una nueva partida, mostrara el historial de partidas junto con la mejor
+     * partida y el numero de intentos, un ranking.
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -40,7 +43,27 @@ public class AlbertoTosteDamianTCeneroPRO {
             
             switch(opcion){
                 case 1:
-                    System.out.println("Se inicia la partida");
+                    System.out.println("Se inicia la partida");                   
+                    NumAleatorio n1 = new NumAleatorio(10, 1);                   
+                    System.out.println("El número a adivinar está entre el 1"
+                            + "y el 10");
+                    System.out.println("Introduce el número que creas correcto");
+                    int intento = sc.nextInt(); sc.nextLine();
+                    int vecesIntentado = 0;
+                    while (n1.getNum() != intento) {                        
+                        System.out.println("Has fallado, inténtalo de nuevo");
+                        vecesIntentado++;
+                        //estoy haciendo mal el bucle, porque si fallas se hace infinito XD
+                    }if(n1.getNum()== intento) {
+                        System.out.println("¡Enhorabuena, has acertado");
+                        System.out.println("Lo has intentado: "+vecesIntentado+
+                                " veces");
+                    }
+                        
+                    
+                    //¿Aqui deberia tener el get.aleatorio, no?
+                    //¿y en cuanto acierte un numero, el break no terminaria
+                    //todo el programa y no le dejaria al usuario seguir?
                     break;
                 case 2:
                     System.out.println("Historial");

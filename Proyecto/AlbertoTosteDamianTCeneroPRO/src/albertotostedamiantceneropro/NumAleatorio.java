@@ -10,18 +10,30 @@ import java.util.Random;
 /**
  *
  * @author JDamián
+ * @version 1.0
+ * Este código establace y devuelve el número aleatorio que el jugador
+ * tratará de adivinar.
  */
 public class NumAleatorio {
     private int numMax;
     private int numMin;
     private int num;
-
+/**
+ * @param numMax establece el valor MÁXIMO que puede conseguir el número aleatorio.
+ * @param numMin establece el valor MÍNIMO del número aleatorio.
+ */
     public NumAleatorio(int numMax, int numMin) {
         Random rnd = new Random();
         this.numMax = numMax;
         this.numMin = numMin;
         this.num = rnd.nextInt(numMax-numMin)+numMin;
     }
+    /**
+     * Contructor por defecto
+     */
+    public NumAleatorio() {
+    }
+    
 
     public int getNum() {
         return num;

@@ -5,6 +5,8 @@
  */
 package albertotostedamiantceneropro;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Alberto Hernández Medina
@@ -15,15 +17,21 @@ public class AlbertoTosteDamianTCeneroPRO {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         
         NumAleatorio numSecreto=new NumAleatorio(10, 1);
         System.out.println(numSecreto.getNum());
         
         Interfaz hud = new Interfaz();
         
-        System.out.println(hud.menuInicio());
+        sc.nextLine();
+        System.out.println(hud.espacioHud());
+        sc.nextLine();
+        System.out.println(hud.menuJuego());
+        sc.nextLine();
         System.out.println(hud.menuDificultad());
-        System.out.println(hud.interfazJuego());
+        
+        
         
         
     }

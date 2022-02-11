@@ -56,13 +56,21 @@ public class Interfaz {
             for (int i = 0; i < esp - dificultad.length(); i++) { //Calculo del espacio sobrante
                 espacios += " ";
             }
-            
-            
+        res += "\n";     
+        res += "\n"; 
+        res += "\n"; 
+        res += "\n"; 
+        res += "\n";   
         res += "+-----------Menú de juego----------+\n";
         res += "|1. " + dificultad + espacios +   "|\n";
         res += "|2. Empezar juego.                 |\n";
         res += "|3. Cancelar.                      |\n";
         res += "+----------------------------------+\n";
+        res += "\n"; 
+        res += "\n"; 
+        res += "\n"; 
+        res += "\n"; 
+
         
         return res;
     }
@@ -73,12 +81,20 @@ public class Interfaz {
         public String menuDificultad(){
         String res = "";
         
+        res += "\n"; 
+        res += "\n"; 
+        res += "\n"; 
+        res += "\n"; 
         res += "+--------Menú de dificultad--------+\n";
         res += "|1. Fácil.                         |\n";
         res += "|2. Moderada.                      |\n";
         res += "|3. Difícil.                       |\n";
-        res += "|3. Cancelar.                      |\n";
+        res += "|4. Cancelar.                      |\n";
         res += "+----------------------------------+\n";
+        res += "\n"; 
+        res += "\n"; 
+        res += "\n"; 
+        
         
         return res;
     }
@@ -118,7 +134,7 @@ public class Interfaz {
             res += "|     Menor que                        Mayor que     |\n";
             res += "|  +-------------+                  +-------------+  |\n";
             res += "|  |             |                  |             |  |\n";
-            res += "|  |             |                  |             |  |\n";
+            res += "|  |      |      |                  |      |      |  |\n";
             res += "|  |             |                  |             |  |\n";
             res += "|  +-------------+     ________     +-------------+  |\n";
             res += "|                                                    |\n";
@@ -128,7 +144,20 @@ public class Interfaz {
     }
     public String espacioHud(){
         String res ="";
-        
+            res += "+----------------------------------------------------+\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|    Deja visible solo este espacio en la pantalla   |\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "+----------------------------------------------------+";
         return res;
     }    
     

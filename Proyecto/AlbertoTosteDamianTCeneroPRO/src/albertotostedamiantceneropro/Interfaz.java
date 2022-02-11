@@ -82,16 +82,19 @@ public class Interfaz {
         
         return res;
     }
-     /** Muestra el menu para la eleccion de la dificultad con sus opciones.
+     /** Muestra el menu para la interfaz.
      * @return String con saltos de linea con la estructura del menu.
      */
         public String interfazJuego(){
         String res = "";
         int gDificultad = 3;
-        
-        int fallos=0;
-        String contenedor1 = "["+fallos+"]";
-        
+        int esp = 32;
+        String espacios= ""; 
+        int fallos=100;
+        String contenedor1 = "[ "+fallos+" ]";
+        for (int i = 0; i <   esp - contenedor1.length() -20; i++) {
+                espacios += " ";
+            }
         
        /* 
         switch (gDificultad) { // Definir el String de dificultad para calcular el espacio sobrantes en el rango
@@ -108,9 +111,19 @@ public class Interfaz {
                     dificultad = "Elegir dificultad";
             }
         */
-            res += "+--------------------------------+\n";
-            res += "+                                +\n";
-            res += "+--------------------------------+\n";
+            res += "+----------------------------------------------------+\n";
+            res += "|                            fallos:     "+ contenedor1 + espacios + "|\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|     Menor que                        Mayor que     |\n";
+            res += "|  +-------------+                  +-------------+  |\n";
+            res += "|  |             |                  |             |  |\n";
+            res += "|  |             |                  |             |  |\n";
+            res += "|  |             |                  |             |  |\n";
+            res += "|  +-------------+     ________     +-------------+  |\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "+----------------------------------------------------+\n";
         return res;
     }
     public String espacioHud(){

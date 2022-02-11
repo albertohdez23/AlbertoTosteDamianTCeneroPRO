@@ -23,7 +23,7 @@ public class AlbertoTosteDamianTCeneroPRO {
         
         System.out.println(hud.menuInicio());
         System.out.println(hud.menuDificultad());
-        System.out.println(hud.menuJuego());
+        System.out.println(hud.interfazJuego());
         
         
     }

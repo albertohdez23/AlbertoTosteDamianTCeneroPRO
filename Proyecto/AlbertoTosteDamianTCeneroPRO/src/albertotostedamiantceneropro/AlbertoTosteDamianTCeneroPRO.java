@@ -18,6 +18,14 @@ public class AlbertoTosteDamianTCeneroPRO {
         
         NumAleatorio numSecreto=new NumAleatorio(10, 1);
         System.out.println(numSecreto.getNum());
+        
+        Interfaz hud = new Interfaz();
+        
+        System.out.println(hud.menuInicio());
+        System.out.println(hud.menuDificultad());
+        System.out.println(hud.menuJuego());
+        
+        
     }
     
 }

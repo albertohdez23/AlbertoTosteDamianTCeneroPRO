@@ -19,11 +19,20 @@ public class Interfaz {
     public String menuInicio(){
         String res = "";
         
+        res += "\n";     
+        res += "\n"; 
+        res += "\n"; 
+        res += "\n"; 
+        res += "\n"; 
         res += "+---------------Menú---------------+\n";
         res += "|1. Jugar una pratida              |\n";
         res += "|2. Mostrar la tabla de puntuación |\n";
         res += "|3. Salir                          |\n";
         res += "+----------------------------------+\n";
+        res += "\n"; 
+        res += "\n"; 
+        res += "\n"; 
+        res += "\n"; 
         
         return res;
     }   
@@ -71,8 +80,8 @@ public class Interfaz {
         res += "\n"; 
         res += "\n"; 
 
-        
-        return res;
+
+                return res;
     }
         /**
      * Muestra el menu para la eleccion de la dificultad con sus opciones.
@@ -102,46 +111,83 @@ public class Interfaz {
      * @return String con saltos de linea con la estructura del menu.
      */
         public String interfazJuego(){
+            
         String res = "";
+        String rango = "";
         int gDificultad = 3;
         int esp = 32;
         String espacios= ""; 
-        int fallos=100;
+        int fallos=0;
+        
+        String espMayor= "";
+        String mayor = "";
+        String espMenor= "";
+        String menor = "";
+        int numsecreto = -1;
+        String secreto ="";
+        
+            if (numsecreto < 10) {
+                secreto = "___" + numsecreto +  "___";
+            }
+            if (numsecreto > 10 && numsecreto < 100) {
+                secreto = "___" + numsecreto +  "___";
+            }
+            if (numsecreto > 99) {
+                secreto = "__" + numsecreto +  "___";
+            }
+            if (numsecreto == -1) {
+                secreto = "________";
+            }
+        
+        for (int i = 0; i < 6 - mayor.length(); i++) {
+                espMayor += " ";
+            }
+        
+        for (int i = 0; i < 6 - menor.length(); i++) {
+                espMenor += " ";
+            }
+        
         String contenedor1 = "[ "+fallos+" ]";
         for (int i = 0; i <   esp - contenedor1.length() -20; i++) {
                 espacios += " ";
             }
         
-       /* 
-        switch (gDificultad) { // Definir el String de dificultad para calcular el espacio sobrantes en el rango
+        
+       
+        switch (gDificultad) {
                 case 1:
-                     = "Fácil";
+                    rango = "  Rango: [0 - 25]  ";
                     break;
                 case 2:
-                    dificultad = "Moderada";
+                    rango = "  Rango: [0 - 50]  ";
                     break;
                 case 3:
-                    dificultad = "Difícil";
+                    rango = "  Rango: [0 - 100] ";
                     break;
-                default:
-                    dificultad = "Elegir dificultad";
+                
             }
-        */
-            res += "+----------------------------------------------------+\n";
-            res += "|                            fallos:     "+ contenedor1 + espacios + "|\n";
+        
+            res += "+----------------------------------------------------+\n";            
+            res += "|  "+rango+"       fallos:     "+ contenedor1 + espacios + "|\n";
             res += "|                                                    |\n";
             res += "|                                                    |\n";
-            res += "|     Menor que                        Mayor que     |\n";
+            res += "|     Mayor que                        Menor que     |\n";
             res += "|  +-------------+                  +-------------+  |\n";
             res += "|  |             |                  |             |  |\n";
-            res += "|  |      |      |                  |      |      |  |\n";
+            res += "|  | "+ espMayor +mayor + "      |                  |      " + menor + espMenor +" |  |\n";
             res += "|  |             |                  |             |  |\n";
-            res += "|  +-------------+     ________     +-------------+  |\n";
+            res += "|  +-------------+     "+ secreto +"     +-------------+  |\n";
             res += "|                                                    |\n";
             res += "|                                                    |\n";
             res += "+----------------------------------------------------+\n";
         return res;
     }
+        
+        /**
+         * Este menú indica al jugador que ajuste la vista de la terminal a solo lo que se muestra para
+         * que solo se muestre un menu a la vez en pantalla.
+         * @return 
+         */
     public String espacioHud(){
         String res ="";
             res += "+----------------------------------------------------+\n";
@@ -151,14 +197,25 @@ public class Interfaz {
             res += "|                                                    |\n";
             res += "|                                                    |\n";
             res += "|                                                    |\n";
-            res += "|    Deja visible solo este espacio en la pantalla   |\n";
-            res += "|                                                    |\n";
+            res += "|   Deja visible solo este espacio en la pantalla,   |\n";
+            res += "|                 luego pulse enter                  |\n";
             res += "|                                                    |\n";
             res += "|                                                    |\n";
             res += "|                                                    |\n";
             res += "|                                                    |\n";
             res += "+----------------------------------------------------+";
         return res;
-    }    
+    }  
+    /**
+     * Se muestra una tala con las puntuaciones de los jugadores.
+     * @return 
+     */
+    public String marcadores(){
+        String res ="";
+            res += "+----------------------------------------------------+\n";
+           
+            res += "+----------------------------------------------------+";
+        return res;
+    }
     
 }

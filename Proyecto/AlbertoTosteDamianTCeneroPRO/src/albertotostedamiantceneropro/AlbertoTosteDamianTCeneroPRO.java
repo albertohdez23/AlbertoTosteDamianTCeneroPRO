@@ -30,6 +30,7 @@ public class AlbertoTosteDamianTCeneroPRO {
         System.out.println(hud.menuJuego());
         sc.nextLine();
         System.out.println(hud.menuDificultad());
+        System.out.println(hud.interfazJuego());
         
         
         

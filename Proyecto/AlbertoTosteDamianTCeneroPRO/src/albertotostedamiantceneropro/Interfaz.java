@@ -45,7 +45,7 @@ public class Interfaz {
         String res = "";
         int esp = 31; // espacios totales para el recuadrod
         String dificultad="";
-        int gDificultad = 1; // CAMBIAR
+        int gDificultad = 0; // CAMBIAR
             switch (gDificultad) { // Definir el String de dificultad para calcular el espacio sobrantes //CAMBIAR
                 case 1:
                     dificultad = "Fácil";
@@ -120,14 +120,14 @@ public class Interfaz {
         int fallos=0;
         
         String espMayor= "";
-        String mayor = "";
+        String mayor = "1";
         String espMenor= "";
-        String menor = "";
-        int numsecreto = -1;
+        String menor = "9";
+        int numsecreto = 8;
         String secreto ="";
         
             if (numsecreto < 10) {
-                secreto = "___" + numsecreto +  "___";
+                secreto = "___" + numsecreto +  "____";
             }
             if (numsecreto > 10 && numsecreto < 100) {
                 secreto = "___" + numsecreto +  "___";

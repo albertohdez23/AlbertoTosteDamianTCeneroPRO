@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * nombre: Nos indica el nombre del jugador
  * partidasJugadas: Nos indica el numero de partidas que ha jugado en total
  * mejorIntento: Muestra la menor cantidad de intentos necesarios para adivinar
+ * ultimoIntento: Esta variable almacena temporalmente los resultados de la ultima partida jugada
  * historial: Guarda todas las puntuaciones del jugador
  * @author Alberto Hernández Medina
  */
@@ -19,6 +20,7 @@ public class Jugador {
     String nombre;
     int partidasJugadas;
     int mejorIntento;
+    int ultimoIntento;
     ArrayList<Integer> historial = new ArrayList<>();
     
     /**

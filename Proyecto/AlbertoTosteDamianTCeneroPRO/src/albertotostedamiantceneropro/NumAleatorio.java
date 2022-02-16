@@ -8,7 +8,9 @@ package albertotostedamiantceneropro;
 import java.util.Random;
 
 /**
- *
+ * Esta clase genera el número aleatorio que el jugador debe tratar de adivinar
+ * NumMax delimita el máximo valor que podrá tener el numero aleatorio
+ * NumMin delimita el valor mínimo que podrá obtener el numero aleatorio
  * @author JDamián
  */
 public class NumAleatorio {

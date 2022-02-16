@@ -33,10 +33,6 @@ public class AlbertoTosteDamianTCeneroPRO {
         sc.nextLine();
         System.out.println(hud.interfazJuego());
         sc.nextLine();
-        
-        
-        
-        
     }
     
 }

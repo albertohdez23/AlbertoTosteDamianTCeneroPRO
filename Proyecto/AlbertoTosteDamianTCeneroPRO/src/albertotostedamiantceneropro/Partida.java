@@ -8,7 +8,16 @@ package albertotostedamiantceneropro;
 /**
  *
  * @author Alejandro Toste
+ * @author JDamian
  */
 public class Partida {
+    NumAleatorio secreto;
+    int mayorQue;
+    int menorQue;
+    int rangoMin;
+    int rangoMax;
+    int fallos;
+    int introducido;
+    Jugador nick;
     
 }

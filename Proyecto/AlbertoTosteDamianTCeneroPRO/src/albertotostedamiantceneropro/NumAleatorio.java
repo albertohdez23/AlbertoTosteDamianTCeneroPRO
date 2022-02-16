@@ -17,7 +17,12 @@ public class NumAleatorio {
     private int numMax;
     private int numMin;
     private int num;
-
+/**
+ * Constructor que recibe los limites, tanto superior e inferior, del numero 
+ * generado aleatoriamente que el jugador tratara de adivinar
+ * @param numMax
+ * @param numMin 
+ */
     public NumAleatorio(int numMax, int numMin) {
         Random rnd = new Random();
         this.numMax = numMax;
@@ -44,4 +49,10 @@ public class NumAleatorio {
     public void setNumMin(int numMin) {
         this.numMin = numMin;
     }
+
+    @Override
+    public String toString() {
+        return "NumAleatorio{" + "num=" + num + '}';
+    }
+    
 }

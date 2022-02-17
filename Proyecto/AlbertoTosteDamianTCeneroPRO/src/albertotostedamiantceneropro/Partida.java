@@ -118,8 +118,26 @@ public class Partida {
             secretoAEnviar = - 1;
         }
     }
-    public int secretoAEnviar(){
-       return secretoAEnviar;
+
+    public int secretoAEnviar() {
+        return secretoAEnviar;
+    }
+
+    public void terminarPartida() {
+        this.nick.setUltimoIntento(fallos);
+        switch (dificultad) {
+
+            case 1:
+                nick.historialFacil.add(fallos);
+                break;
+            case 2:
+                nick.historialMedio.add(fallos);
+                break;
+            case 3:
+                nick.historialDificil.add(fallos);
+                break;
+        }
+                
     }
 
 }

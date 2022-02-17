@@ -87,19 +87,19 @@ public class Partida {
                 rangoMin = 0;
                 rangoMax = 25;
                 secreto = new NumAleatorio(rangoMax, rangoMin);
-                secretoAEnviar = - 1;
+                secretoAEnviar = -1;
                 break;
             case 2:
                 rangoMin = 0;
                 rangoMax = 50;
                 secreto = new NumAleatorio(rangoMax, rangoMin);
-                secretoAEnviar = - 1;
+                secretoAEnviar = -1;
                 break;
             case 3:
                 rangoMin = 0;
                 rangoMax = 100;
                 secreto = new NumAleatorio(rangoMax, rangoMin);
-                secretoAEnviar = - 1;
+                secretoAEnviar = -1;
                 break;
         }
     }

@@ -123,21 +123,40 @@ public class Interfaz {
         int fallos=p.getFallos();
         
         String espMayor= "";
-        String mayor = "" + p.getMayorQue();
+        String mayor = "";
+        
+            if (p.getMayorQue() == 0) {
+                mayor = "";
+            }else{
+                mayor = "" + p.getMayorQue();
+            }
+            
         String espMenor= "";
-        String menor = "" + p.getMenorQue();
+        String menor = "";
+            
+        if (p.getMenorQue() == 0) {
+                menor = "";
+            }else{
+                 menor = "" + p.getMenorQue();
+            }
+        
+        
         
         int numsecreto = p.secretoAEnviar();
         String secreto ="";
+        String mensajeFinal="";
         
             if (numsecreto < 10) {
                 secreto = "___" + numsecreto +  "____";
+                mensajeFinal="¡¡¡Correcto!!! pulse enter para continuar";
             }
             if (numsecreto > 10 && numsecreto < 100) {
                 secreto = "___" + numsecreto +  "___";
+                mensajeFinal="¡¡¡Correcto!!! pulse enter para continuar";
             }
             if (numsecreto > 99) {
                 secreto = "__" + numsecreto +  "___";
+                mensajeFinal="¡¡¡Correcto!!! pulse enter para continuar";
             }
             if (numsecreto == -1) {
                 secreto = "________";
@@ -156,8 +175,6 @@ public class Interfaz {
                 espacios += " ";
             }
         
-        
-       
         switch (gDificultad) {
                 case 1:
                     rango = "  Rango: [0 - 25]  ";
@@ -171,6 +188,8 @@ public class Interfaz {
                 
             }
         
+        
+        
             res += "+----------------------------------------------------+\n";            
             res += "|  "+rango+"       fallos:     "+ contenedor1 + espacios + "|\n";
             res += "|                                                    |\n";
@@ -182,7 +201,7 @@ public class Interfaz {
             res += "|  |             |                  |             |  |\n";
             res += "|  +-------------+     "+ secreto +"     +-------------+  |\n";
             res += "|                                                    |\n";
-            res += "|                                                    |\n";
+            res += "|    "+ mensajeFinal +"       |\n";
             res += "+----------------------------------------------------+\n";
         return res;
     }

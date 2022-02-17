@@ -15,7 +15,10 @@ import java.util.Scanner;
  */
 public class Partida {
 
+    
+
     NumAleatorio secreto;
+    int secretoAEnviar;
     int mayorQue;
     int menorQue;
     int rangoMin;
@@ -73,6 +76,9 @@ public class Partida {
     public void setNick(Jugador nick) {
         this.nick = nick;
     }
+    public int getDificultad() {
+        return dificultad;
+    }
 
     public void iniciarPartida(int dificultad) {
         this.dificultad = dificultad;
@@ -94,17 +100,22 @@ public class Partida {
         }
     }
 
-    public void introducirDato() {
-        Scanner sc = new Scanner(System.in);
+    public void introducirDato(int num) {
+        introducido = num;
         if (introducido == secreto.getNum()) {
-            
+            secretoAEnviar = secreto.getNum();
         } else if (introducido < secreto.getNum()) {
             setMayorQue(secreto.getNum());
             setFallos(fallos + 1);
+            secretoAEnviar = - 1;
         } else {
             setMenorQue(secreto.getNum());
             setFallos(fallos + 1);
+            secretoAEnviar = - 1;
         }
+    }
+    public int secretoAEnviar(){
+       return secretoAEnviar;
     }
 
 }

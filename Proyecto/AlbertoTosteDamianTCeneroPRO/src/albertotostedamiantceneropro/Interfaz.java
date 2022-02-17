@@ -41,12 +41,12 @@ public class Interfaz {
      * Cuando se eliga una dificultad, la opción de la dificultad se actualizará a la dificultad actual
      * @return String con saltos de linea con la estructura del menu.
      */
-        public String menuJuego(){
+        public String menuJuego(Partida p){
         String res = "";
-        int esp = 31; // espacios totales para el recuadrod
+        int esp = 31; 
         String dificultad="";
-        int gDificultad = 0; // CAMBIAR
-            switch (gDificultad) { // Definir el String de dificultad para calcular el espacio sobrantes //CAMBIAR
+        int gDificultad = p.getDificultad(); 
+            switch (gDificultad) {
                 case 1:
                     dificultad = "Fácil";
                     break;
@@ -110,20 +110,23 @@ public class Interfaz {
      /** Muestra el menu para la interfaz.
      * @return String con saltos de linea con la estructura del menu.
      */
-        public String interfazJuego(){
+        public String interfazJuego(Partida p){
             
         String res = "";
         String rango = "";
-        int gDificultad = 3;
+        
+        int gDificultad = p.getDificultad();
         int esp = 32;
+        
         String espacios= ""; 
-        int fallos=0;
+        int fallos=p.getFallos();
         
         String espMayor= "";
-        String mayor = "1";
+        String mayor = "" + p.getMayorQue();
         String espMenor= "";
-        String menor = "9";
-        int numsecreto = 8;
+        String menor = "" + p.getMenorQue();
+        
+        int numsecreto = p.secretoAEnviar();
         String secreto ="";
         
             if (numsecreto < 10) {

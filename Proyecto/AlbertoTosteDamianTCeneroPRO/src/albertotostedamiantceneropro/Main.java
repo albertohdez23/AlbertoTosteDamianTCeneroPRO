@@ -22,9 +22,9 @@ public class Main {
         int dificultadPartida = 0;
         Interfaz hud = new Interfaz();
         
-        Jugador P1 = new Jugador("");
+        //Jugador P1 = new Jugador("");
        
-        Partida Partida1 = new Partida(P1, dificultadPartida);
+        //Partida Partida1 = new Partida(P1, dificultadPartida);
         
         boolean salir = false;
         
@@ -51,17 +51,17 @@ public class Main {
                                 switch (opcion2) {
                                     case 1:
                                         dificultadPartida = 1;
-                                        Partida1.dificultad = 1;
+                                        //Partida1.dificultad = 1;
                                         System.out.println("Dificultad Fácil Seleccionada");
                                         break;
                                     case 2:
                                         dificultadPartida = 2;
-                                        Partida1.dificultad = 2;
+                                        //Partida1.dificultad = 2;
                                         System.out.println("Dificultad Moderada Seleccionada");
                                         break;
                                     case 3:
                                         dificultadPartida = 3;
-                                        Partida1.dificultad = 3;
+                                        //Partida1.dificultad = 3;
                                         System.out.println("Dificultad Difícil Seleccionada");
                                         break;
                                     case 0:
@@ -75,6 +75,8 @@ public class Main {
 
                             case 2://Empieza la Partida
                                 if (dificultadPartida != 0){
+                                    Jugador player = new Jugador("");
+                                    Partida Partida1 = new Partida(player, dificultadPartida);
                                     Partida1.iniciarPartida(dificultadPartida);
                                     do {
                                         System.out.println(hud.interfazJuego(Partida1));
@@ -98,9 +100,9 @@ public class Main {
                     break;
                 case 2://Mostrar Tabla Puntuacion
                     System.out.println("Historial");
-                    System.out.println(P1.historial);
+                    //System.out.println(P1.historial);
                     System.out.print("Tu mejor partida: ");
-                    System.out.println(P1.getMejorIntento() + " intentos");
+                    //System.out.println(P1.getMejorIntento() + " intentos");
                     break;
                 case 3://Mostrar Ranking
                     System.out.println("Se muestra el ranking");

@@ -27,7 +27,8 @@ public class Interfaz {
         res += "+---------------Menú---------------+\n";
         res += "|1. Jugar una pratida              |\n";
         res += "|2. Mostrar la tabla de puntuación |\n";
-        res += "|3. Salir                          |\n";
+        res += "|3. Mostrar Ranking                |\n";
+        res += "|0. Salir                          |\n";
         res += "+----------------------------------+\n";
         res += "\n"; 
         res += "\n"; 
@@ -41,11 +42,11 @@ public class Interfaz {
      * Cuando se eliga una dificultad, la opción de la dificultad se actualizará a la dificultad actual
      * @return String con saltos de linea con la estructura del menu.
      */
-        public String menuJuego(Partida p){
+        public String menuJuego(int diff){
         String res = "";
         int esp = 31; 
         String dificultad="";
-        int gDificultad = p.getDificultad(); 
+        int gDificultad = diff; 
             switch (gDificultad) {
                 case 1:
                     dificultad = "Fácil";
@@ -73,7 +74,7 @@ public class Interfaz {
         res += "+-----------Menú de juego----------+\n";
         res += "|1. " + dificultad + espacios +   "|\n";
         res += "|2. Empezar juego.                 |\n";
-        res += "|3. Cancelar.                      |\n";
+        res += "|0. Cancelar.                      |\n";
         res += "+----------------------------------+\n";
         res += "\n"; 
         res += "\n"; 
@@ -98,7 +99,7 @@ public class Interfaz {
         res += "|1. Fácil.                         |\n";
         res += "|2. Moderada.                      |\n";
         res += "|3. Difícil.                       |\n";
-        res += "|4. Cancelar.                      |\n";
+        res += "|0. Cancelar.                      |\n";
         res += "+----------------------------------+\n";
         res += "\n"; 
         res += "\n"; 

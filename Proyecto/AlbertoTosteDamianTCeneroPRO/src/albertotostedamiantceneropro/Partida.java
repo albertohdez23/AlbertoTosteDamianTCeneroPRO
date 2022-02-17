@@ -14,9 +14,6 @@ import java.util.Scanner;
  * @author JDamian
  */
 public class Partida {
-
-    
-
     NumAleatorio secreto;
     int secretoAEnviar;
     int mayorQue;
@@ -35,6 +32,7 @@ public class Partida {
     public Partida(Jugador nick, int dificultad) {
         this.nick = nick;
         this.dificultad = dificultad;
+        iniciarPartida(dificultad);
     }
 
     public NumAleatorio getSecreto() {
@@ -88,15 +86,21 @@ public class Partida {
             case 1:
                 rangoMin = 0;
                 rangoMax = 25;
-                secreto = new NumAleatorio(rangoMin, rangoMax);
+                secreto = new NumAleatorio(rangoMax, rangoMin);
+                secretoAEnviar = - 1;
+                break;
             case 2:
                 rangoMin = 0;
                 rangoMax = 50;
-                secreto = new NumAleatorio(rangoMin, rangoMax);
+                secreto = new NumAleatorio(rangoMax, rangoMin);
+                secretoAEnviar = - 1;
+                break;
             case 3:
                 rangoMin = 0;
                 rangoMax = 100;
-                secreto = new NumAleatorio(rangoMin, rangoMax);
+                secreto = new NumAleatorio(rangoMax, rangoMin);
+                secretoAEnviar = - 1;
+                break;
         }
     }
 
@@ -105,11 +109,11 @@ public class Partida {
         if (introducido == secreto.getNum()) {
             secretoAEnviar = secreto.getNum();
         } else if (introducido < secreto.getNum()) {
-            setMayorQue(secreto.getNum());
+            setMayorQue(introducido);
             setFallos(fallos + 1);
             secretoAEnviar = - 1;
         } else {
-            setMenorQue(secreto.getNum());
+            setMenorQue(introducido);
             setFallos(fallos + 1);
             secretoAEnviar = - 1;
         }

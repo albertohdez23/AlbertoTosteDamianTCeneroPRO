@@ -122,7 +122,9 @@ public class Partida {
     public int secretoAEnviar() {
         return secretoAEnviar;
     }
-
+    /**
+     * agrega los fallos al jugador al finalizar la partida
+     */
     public void terminarPartida() {
         this.nick.setUltimoIntento(fallos);
         switch (dificultad) {

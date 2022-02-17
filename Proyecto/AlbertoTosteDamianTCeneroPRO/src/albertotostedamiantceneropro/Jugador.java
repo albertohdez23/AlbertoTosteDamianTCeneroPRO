@@ -22,9 +22,9 @@ public class Jugador {
     int partidasJugadas;
     int mejorIntento;
     int ultimoIntento;
-    ArrayList<Integer> historialFacil = new ArrayList<>();
-    ArrayList<Integer> historialMedio = new ArrayList<>();
-    ArrayList<Integer> historialDificil = new ArrayList<>();
+    ArrayList<Integer> historialFacil; 
+    ArrayList<Integer> historialMedio;
+    ArrayList<Integer> historialDificil;
     
     /**
      * Constructor que recibe un parametro tipo String
@@ -32,6 +32,9 @@ public class Jugador {
      */
     public Jugador(String nombre) {
         this.nombre = nombre;
+        historialFacil = new ArrayList();
+        historialMedio = new ArrayList();
+        historialDificil = new ArrayList();
     }
 
     public String getNombre() {

@@ -45,7 +45,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         
         boolean salir2 = false;
-
+        boolean salirjuego = false;
+        
         do {
             System.out.println(hud.menuJuego(dificultadPartida));
             eleccion = sc.nextInt(); sc.nextLine();
@@ -65,14 +66,28 @@ public class Main {
                         Jugador player = new Jugador("");
                         Partida Partida1 = new Partida(player, dificultadPartida);
                         Partida1.iniciarPartida(dificultadPartida);
+                        num = 0;
                         do {
+                            if (num == Partida1.secreto.getNum()) {
+                                salirjuego = true;
+                            }
                             System.out.println(hud.interfazJuego(Partida1));
-                            num = sc.nextInt();
-                            sc.nextLine();
+                            if (!salirjuego) {
+                                num = sc.nextInt();
+                                sc.nextLine();
+                            } else {
+                                sc.nextLine();
+                            }
                             Partida1.introducirDato(num);
-                        } while (num != Partida1.secreto.getNum());
+                        } while (!salirjuego);
+                        /*
+                        System.out.println(hud.ponerNombreJugador());
+                        player.setNombre(sc.nextLine());
+                        System.out.println(hud.nombreJugador(player, Partida1));
+                        sc.nextLine();
+                        */
                         salir2 = true;
-                    } else {
+                    }else {
                         System.out.println("Dificultad no Seleccionada");
                     }
                     break;

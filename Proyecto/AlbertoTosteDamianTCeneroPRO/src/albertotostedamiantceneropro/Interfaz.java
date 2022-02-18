@@ -146,7 +146,7 @@ public class Interfaz {
         String secreto ="";
         String mensajeFinal="";
         
-            if (numsecreto < 10) {
+            if (numsecreto < 10 && numsecreto > -1) {
                 secreto = "___" + numsecreto +  "____";
                 mensajeFinal="¡¡¡Correcto!!! pulse enter para continuar";
             }
@@ -160,6 +160,7 @@ public class Interfaz {
             }
             if (numsecreto == -1) {
                 secreto = "________";
+                mensajeFinal="                                         ";
             }
         
         for (int i = 0; i < 6 - mayor.length(); i++) {
@@ -241,4 +242,73 @@ public class Interfaz {
         return res;
     }
     
+    public String ponerNombreJugador(){
+        String res ="";
+            res += "\n";
+            res += "\n"; 
+            res += "\n"; 
+            res += "+----------------------------------------------------+\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|             Escriba su nombre de 4 letras          |\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "+----------------------------------------------------+\n";
+            res += "\n"; 
+            res += "\n"; 
+            
+        return res; 
+    }
+    
+    public String nombreJugador(Jugador p1,Partida partida){
+        
+        String nombre = p1.getNombre();
+        String fallos = "" + partida.getFallos();
+        String espFallos = "";
+         for (int i = 0; i < 2 - fallos.length(); i++) {
+                espFallos += " ";
+            }
+         
+        String dificultad = "";
+        
+        switch (partida.getDificultad()) {
+                case 1:
+                    dificultad = "Fácil";
+                    break;
+                case 2:
+                    dificultad = "Moderada";
+                    break;
+                case 3:
+                    dificultad = "Difícil";
+                    break;
+               
+            }
+        
+        
+        String espdiff = "";
+        
+        for (int i = 0; i < 8 - dificultad.length(); i++) {
+                espFallos += " ";
+            }
+        
+        
+        String res ="";
+            res += "\n";
+            res += "\n"; 
+            res += "\n"; 
+            res += "+----------------------------------------------------+\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|  "+nombre+" ---------------------- "+ dificultad + espdiff +"    Fallos: " + fallos + espFallos + "|\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "+----------------------------------------------------+\n";
+            res += "\n"; 
+            res += "\n";
+        return res;
+    }
 }

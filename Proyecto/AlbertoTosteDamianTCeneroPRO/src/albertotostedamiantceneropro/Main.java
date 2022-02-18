@@ -22,6 +22,7 @@ public class Main {
         int dificultadPartida = 0;
         Interfaz hud = new Interfaz();
         
+        boolean salirjuego=false;
         //Jugador P1 = new Jugador("");
        
         //Partida Partida1 = new Partida(P1, dificultadPartida);
@@ -75,14 +76,31 @@ public class Main {
 
                             case 2://Empieza la Partida
                                 if (dificultadPartida != 0){
+                                    
                                     Jugador player = new Jugador("");
                                     Partida Partida1 = new Partida(player, dificultadPartida);
                                     Partida1.iniciarPartida(dificultadPartida);
+                                    num = 0;
                                     do {
+                                        if (num == Partida1.secreto.getNum()) {
+                                            salirjuego= true;
+                                        }
                                         System.out.println(hud.interfazJuego(Partida1));
-                                        num = sc.nextInt(); sc.nextLine();
+                                        if (!salirjuego) {
+                                            num = sc.nextInt(); sc.nextLine();
+                                        }else{
+                                            sc.nextLine();
+                                        }
                                         Partida1.introducirDato(num);
-                                    } while (num != Partida1.secreto.getNum());
+                                    } while (!salirjuego);
+                                    
+                                    System.out.println(hud.ponerNombreJugador());
+                                    player.setNombre(sc.nextLine());
+                                    System.out.println(hud.nombreJugador(player, Partida1));
+                                    sc.nextLine();
+                                    
+                                    
+                                    
                                     salir2 = true;
                                 }else{
                                     System.out.println("Dificultad no Seleccionada");

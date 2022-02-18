@@ -67,6 +67,7 @@ public class Main {
                         Partida Partida1 = new Partida(player, dificultadPartida);
                         Partida1.iniciarPartida(dificultadPartida);
                         num = 0;
+                        
                         do {
                             if (num == Partida1.secreto.getNum()) {
                                 salirjuego = true;

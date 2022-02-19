@@ -20,7 +20,9 @@ import java.util.ArrayList;
 public class Jugador {
     String nombre;
     int partidasJugadas;
-    int mejorIntento;
+    int mejorIntentoF;
+    int mejorIntentoM;
+    int mejorIntentoD;
     int ultimoIntento;
     ArrayList<Integer> historialFacil; 
     ArrayList<Integer> historialMedio;
@@ -53,15 +55,7 @@ public class Jugador {
         this.partidasJugadas = partidasJugadas;
     }
 
-    public int getMejorIntento() {
-        return mejorIntento;
-    }
-
-    public void setMejorIntento(int mejorIntento) {
-        this.mejorIntento = mejorIntento;
-    }
-    
-
+ 
     public int getUltimoIntento() {
         return ultimoIntento;
     }
@@ -74,24 +68,24 @@ public class Jugador {
         return historialFacil;
     }
 
-    public void setHistorialFacil(ArrayList<Integer> historialFacil) {
-        this.historialFacil = historialFacil;
+    public void setHistorialFacil(int fallos) {
+        this.historialFacil.add(fallos);
     }
 
     public ArrayList<Integer> getHistorialMedio() {
         return historialMedio;
     }
 
-    public void setHistorialMedio(ArrayList<Integer> historialMedio) {
-        this.historialMedio = historialMedio;
+    public void setHistorialMedio(int fallos) {
+        this.historialMedio.add(fallos);
     }
 
     public ArrayList<Integer> getHistorialDificil() {
         return historialDificil;
     }
 
-    public void setHistorialDificil(ArrayList<Integer> historialDificil) {
-        this.historialDificil = historialDificil;
+    public void setHistorialDificil(int fallos) {
+        this.historialDificil.add(fallos);
     }
     
 }

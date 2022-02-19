@@ -231,17 +231,89 @@ public class Interfaz {
         return res;
     }  
     /**
-     * Se muestra una tala con las puntuaciones de los jugadores.
-     * @return 
+     * Se muestra una tala con las puntuaciones de un jugador ordenado de mejor a peor, separado por dificultad.
+     * @param p1 Jugador donde se recogen los datos
+     * @return String con la estructura del menu del historial
      */
-    public String marcadores(){
+    public String Historial(Jugador p1){
+        
+        String jugador = p1.getNombre();
+        
+        String facil = "";
+        String espfacil = "";
+        if (p1.historialFacil.size() < 10) {
+            for (int i = 0; i < p1.historialFacil.size(); i++) {
+                facil += " " + p1.historialFacil.get(i);
+            }
+            for (int i = 0; i < 44 - facil.length()  ; i++) {
+                espfacil += " "; 
+            }
+        }else{
+            System.out.println(p1.historialFacil.size());
+            for (int i = p1.historialFacil.size() - 10 ; i < p1.historialFacil.size(); i++) {
+            facil += " " + p1.historialFacil.get(i);
+            }
+            for (int i = 0; i < 44 - facil.length()  ; i++) {
+                espfacil += " "; 
+            }
+        }
+        
+        
+        String moderado = "";
+        String espMod = "";
+        if (p1.historialMedio.size() < 10) {
+            for (int i = 0; i < p1.historialMedio.size(); i++) {
+                moderado += " " + p1.historialMedio.get(i);
+            }
+            for (int i = 0; i < 41 - moderado.length()  ; i++) {
+                espMod += " "; 
+            }
+        }else{
+            for (int i = p1.historialMedio.size() - 10 ; i < p1.historialMedio.size(); i++) {
+            moderado += " " + p1.historialMedio.get(i);
+            }
+            for (int i = 0; i < 41 - moderado.length()  ; i++) {
+                espMod += " "; 
+            }
+        }
+        String dificil = "";
+        String espDificil = "";
+        
+        if (p1.historialDificil.size() < 10) {
+            for (int i = 0; i < p1.historialDificil.size(); i++) {
+                dificil += " " + p1.historialDificil.get(i);
+            }
+            for (int i = 0; i < 42 - dificil.length()  ; i++) {
+                espDificil += " "; 
+            }
+        }else{
+            for (int i = p1.historialDificil.size() - 10 ; i < p1.historialDificil.size(); i++) {
+            dificil += " " + p1.historialDificil.get(i);
+            }
+            for (int i = 0; i < 42 - dificil.length()  ; i++) {
+                espDificil += " "; 
+            }
+        }
+        
+        
         String res ="";
+            res += "+------------------------"+jugador+"------------------------+\n";
+            res += "|                                                    |\n";
             res += "+----------------------------------------------------+\n";
-           
+            res += "| Fácil :"  +   facil   + espfacil +                "|\n";
+            res += "+----------------------------------------------------+\n";
+            res += "| Moderada :"   +  moderado  + espMod +             "|\n";
+            res += "+----------------------------------------------------+\n";
+            res += "| Difícil :"+  dificil    +  espDificil +           "|\n";
+            res += "+----------------------------------------------------+\n";
+            res += "|            Pulse enter para continuar              |\n";
             res += "+----------------------------------------------------+";
         return res;
     }
-    
+    /**
+     * Menu que muesta un cartel para crear un jugador
+     * @return 
+     */
     public String ponerNombreJugador(){
         String res ="";
             res += "\n";
@@ -261,7 +333,12 @@ public class Interfaz {
             
         return res; 
     }
-    
+    /**
+     * Mustra una tabla donde se ve el jugador elegido y su puntuacion de esa partida
+     * @param p1 jugador
+     * @param partida partica actual
+     * @return 
+     */
     public String nombreJugador(Jugador p1,Partida partida){
         
         String nombre = p1.getNombre();

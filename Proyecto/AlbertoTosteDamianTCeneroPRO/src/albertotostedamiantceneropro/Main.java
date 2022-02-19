@@ -16,29 +16,30 @@ import java.util.TreeSet;
  */
 public class Main {
     
-    public static void switchDificultad(int dificultadPartida, int opcion2){
+    public static int switchDificultad(int dificultadPartida, int opcion2){
         switch (opcion2) {
             case 1:
                 dificultadPartida = 1;
                 //Partida1.dificultad = 1;
-                System.out.println("Dificultad Fácil Seleccionada");
+                
                 break;
             case 2:
                 dificultadPartida = 2;
                 //Partida1.dificultad = 2;
-                System.out.println("Dificultad Moderada Seleccionada");
+                
                 break;
             case 3:
                 dificultadPartida = 3;
                 //Partida1.dificultad = 3;
-                System.out.println("Dificultad Difícil Seleccionada");
+                
                 break;
             case 0:
-                System.out.println("Cancelando...");
+                
                 break;
             default:
-                System.out.println("Opccion no válida");
+                
         }
+        return dificultadPartida;
     }
     
     public static void switchJuego(int dificultadPartida, int eleccion, Interfaz hud){
@@ -89,15 +90,15 @@ public class Main {
                         */
                         salir2 = true;
                     }else {
-                        System.out.println("Dificultad no Seleccionada");
+                        
                     }
                     break;
                 case 0://Cancelar
-                    System.out.println("Cancelando...");
+                    ;
                     salir2 = true;
                     break;
                 default:
-                    System.out.println("Opción no válida");
+                    
             }
         } while (!salir2);
     }
@@ -113,21 +114,21 @@ public class Main {
         TreeSet <Jugador> ordenarJugadorFac = new TreeSet<>(new Comparator<Jugador>() {
             @Override
             public int compare(Jugador p1, Jugador p2) {
-                return Integer.compare(p1.mejorIntento, p2.mejorIntento);
+                return Integer.compare(p1.mejorIntentoF, p2.mejorIntentoF);
             }
         });
         
         TreeSet <Jugador> ordenarJugadorMod = new TreeSet<>(new Comparator<Jugador>() {
             @Override
             public int compare(Jugador p1, Jugador p2) {
-                return Integer.compare(p1.mejorIntento, p2.mejorIntento);
+                return Integer.compare(p1.mejorIntentoM, p2.mejorIntentoM);
             }
         });
         
         TreeSet <Jugador> ordenarJugadorDif = new TreeSet<>(new Comparator<Jugador>() {
             @Override
             public int compare(Jugador p1, Jugador p2) {
-                return Integer.compare(p1.mejorIntento, p2.mejorIntento);
+                return Integer.compare(p1.mejorIntentoD, p2.mejorIntentoD);
             }
         });
         
@@ -135,14 +136,8 @@ public class Main {
         int dificultadPartida = 0;
         Interfaz hud = new Interfaz();
         
-<<<<<<< HEAD
-        boolean salirjuego=false;
-        //Jugador P1 = new Jugador("");
-       
-        //Partida Partida1 = new Partida(P1, dificultadPartida);
-        
-=======
->>>>>>> develop
+
+
         boolean salir = false;
         
         System.out.println(hud.espacioHud());
@@ -154,103 +149,45 @@ public class Main {
             
             switch(opcion){//menuInicio
                 case 1://Jugar Partida
-<<<<<<< HEAD
-                    boolean salir2 = false;
-                   
-                    do{
-                        System.out.println(hud.menuJuego(dificultadPartida));
-                        int eleccion = sc.nextInt(); sc.nextLine();
-                        
-                        switch (eleccion) {//menuJuego
-                            case 1://Selecciona Dificultad
-                                System.out.println(hud.menuDificultad());
-                                int opcion2 = sc.nextInt(); sc.nextLine();
-
-                                switch (opcion2) {
-                                    case 1:
-                                        dificultadPartida = 1;
-                                        //Partida1.dificultad = 1;
-                                        System.out.println("Dificultad Fácil Seleccionada");
-                                        break;
-                                    case 2:
-                                        dificultadPartida = 2;
-                                        //Partida1.dificultad = 2;
-                                        System.out.println("Dificultad Moderada Seleccionada");
-                                        break;
-                                    case 3:
-                                        dificultadPartida = 3;
-                                        //Partida1.dificultad = 3;
-                                        System.out.println("Dificultad Difícil Seleccionada");
-                                        break;
-                                    case 0:
-                                        System.out.println("Cancelando...");
-                                        break;
-                                    default:
-                                        System.out.println("Opccion no válida");
-                                }
-                                int num;
-                                break;
-
-                            case 2://Empieza la Partida
-                                if (dificultadPartida != 0){
-                                    
-                                    Jugador player = new Jugador("");
-                                    Partida Partida1 = new Partida(player, dificultadPartida);
-                                    Partida1.iniciarPartida(dificultadPartida);
-                                    num = 0;
-                                    do {
-                                        if (num == Partida1.secreto.getNum()) {
-                                            salirjuego= true;
-                                        }
-                                        System.out.println(hud.interfazJuego(Partida1));
-                                        if (!salirjuego) {
-                                            num = sc.nextInt(); sc.nextLine();
-                                        }else{
-                                            sc.nextLine();
-                                        }
-                                        Partida1.introducirDato(num);
-                                    } while (!salirjuego);
-                                    
-                                    System.out.println(hud.ponerNombreJugador());
-                                    player.setNombre(sc.nextLine());
-                                    System.out.println(hud.nombreJugador(player, Partida1));
-                                    sc.nextLine();
-                                    
-                                    
-                                    
-                                    salir2 = true;
-                                }else{
-                                    System.out.println("Dificultad no Seleccionada");
-                                }
-                                break;
-                            case 0://Cancelar
-                                System.out.println("Cancelando...");
-                                salir2 = true;
-                                break;
-                            default:
-                                System.out.println("Opción no válida");
-                        }
-                    }while(!salir2);
-=======
-                    int eleccion = 0;
-                    switchJuego(dificultadPartida, eleccion, hud);
->>>>>>> develop
-                    
+                    switchJuego(0, 0, hud);
                     break;
                 case 2://Mostrar Tabla Puntuacion
-                    System.out.println("Historial");
-                    //System.out.println(P1.historial);
-                    System.out.print("Tu mejor partida: ");
+                    
+                    Jugador p1 = new Jugador("Abcs");
+                    p1.setHistorialFacil(10);
+                    p1.setHistorialFacil(10);
+                    p1.setHistorialFacil(10);
+                    p1.setHistorialFacil(10);
+                    p1.setHistorialFacil(10);
+                    p1.setHistorialFacil(10);
+                    p1.setHistorialFacil(10);
+                    p1.setHistorialFacil(10);
+                    p1.setHistorialFacil(10);
+                    p1.setHistorialFacil(10);
+                    p1.setHistorialFacil(10);
+                    p1.setHistorialFacil(10);
+                    p1.setHistorialFacil(10);
+                    p1.setHistorialFacil(10);
+                    p1.setHistorialFacil(10);
+                    p1.setHistorialFacil(10);
+                    p1.setHistorialMedio(10);
+                    p1.setHistorialMedio(10);
+                    p1.setHistorialMedio(10);
+                    p1.setHistorialDificil(10);
+                            
+                    System.out.println(hud.Historial(p1));
+                    sc.nextLine();
+                    
                     //System.out.println(P1.getMejorIntento() + " intentos");
                     break;
                 case 3://Mostrar Ranking
-                    System.out.println("Se muestra el ranking");
+                    
                     break;
                 case 0://Salir
                     salir = true;
                     break;
                 default:
-                    System.out.println("Opción no válida");
+                    
                     break;
             }
             

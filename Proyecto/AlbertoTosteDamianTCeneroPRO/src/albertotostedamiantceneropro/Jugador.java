@@ -44,7 +44,17 @@ public class Jugador {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if (nombre.length() > 4) {
+             this.nombre = nombre.substring(0,4);
+        }else if (nombre.length() < 4){
+            for (int i = 0; i < 4 - nombre.length(); i++) {
+                nombre += " ";
+            }
+            this.nombre = nombre;
+        }else{
+            this.nombre = nombre;
+        }
+        
     }
 
     public int getPartidasJugadas() {

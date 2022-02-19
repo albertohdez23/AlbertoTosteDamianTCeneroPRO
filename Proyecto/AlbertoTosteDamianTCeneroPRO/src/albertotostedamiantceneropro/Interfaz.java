@@ -297,6 +297,8 @@ public class Interfaz {
         
         
         String res ="";
+            res += "\n";
+            res += "\n"; 
             res += "+------------------------"+jugador+"------------------------+\n";
             res += "|                                                    |\n";
             res += "+----------------------------------------------------+\n";
@@ -308,6 +310,8 @@ public class Interfaz {
             res += "+----------------------------------------------------+\n";
             res += "|            Pulse enter para continuar              |\n";
             res += "+----------------------------------------------------+";
+            res += "\n";
+            
         return res;
     }
     /**
@@ -387,5 +391,66 @@ public class Interfaz {
             res += "\n"; 
             res += "\n";
         return res;
+    }
+    /**
+     * Mensaje para mostrar a que jugador quiere buscar 
+     * @return 
+     */
+    public String BuscarJugador(){
+        String res ="";
+            res += "\n";
+            res += "\n"; 
+            res += "\n"; 
+            res += "+----------------------------------------------------+\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|  Escriba el nombre del jugador que quiera buscar   |\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "+----------------------------------------------------+\n";
+            res += "\n"; 
+            res += "\n"; 
+            
+        return res; 
+    }
+        public String jugadoresNoRegistrados(){
+        String res ="";
+            res += "\n";
+            res += "\n"; 
+            res += "\n"; 
+            res += "+----------------------------------------------------+\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|           No existen jugadores registrados         |\n";
+            res += "|              pulse enter para continuar            |\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "+----------------------------------------------------+\n";
+            res += "\n"; 
+            res += "\n"; 
+            
+        return res; 
+    }
+        public String jugadoresNoEncontrado(){
+        String res ="";
+            res += "\n";
+            res += "\n"; 
+            res += "\n"; 
+            res += "+----------------------------------------------------+\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "|             No existe el jugador buscado           |\n";
+            res += "|              pulse enter para continuar            |\n";
+            res += "|                                                    |\n";
+            res += "|                                                    |\n";
+            res += "+----------------------------------------------------+\n";
+            res += "\n"; 
+            res += "\n"; 
+            
+        return res; 
     }
 }

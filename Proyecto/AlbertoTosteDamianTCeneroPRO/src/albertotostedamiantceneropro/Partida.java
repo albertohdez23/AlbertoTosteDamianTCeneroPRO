@@ -29,8 +29,8 @@ public class Partida {
  * @param nick nombre del jugador
  * @param dificultad modo de juego seleccionado por el jugador
  */
-    public Partida(Jugador nick, int dificultad) {
-        this.nick = nick;
+    public Partida( int dificultad) {
+        
         this.dificultad = dificultad;
         iniciarPartida(dificultad);
     }
@@ -125,7 +125,8 @@ public class Partida {
     /**
      * agrega los fallos al jugador al finalizar la partida
      */
-    public void terminarPartida() {
+    public void terminarPartida(Jugador player) {
+        this.nick = player;
         this.nick.setUltimoIntento(fallos);
         switch (dificultad) {
 

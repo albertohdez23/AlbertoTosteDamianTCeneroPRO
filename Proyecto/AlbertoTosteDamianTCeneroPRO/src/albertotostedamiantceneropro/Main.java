@@ -5,28 +5,144 @@
  */
 package albertotostedamiantceneropro;
 
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 /**
  *
  * @author Alberto Hernández Medina
  */
 public class Main {
+    
+    public static void switchDificultad(int dificultadPartida, int opcion2){
+        switch (opcion2) {
+            case 1:
+                dificultadPartida = 1;
+                //Partida1.dificultad = 1;
+                System.out.println("Dificultad Fácil Seleccionada");
+                break;
+            case 2:
+                dificultadPartida = 2;
+                //Partida1.dificultad = 2;
+                System.out.println("Dificultad Moderada Seleccionada");
+                break;
+            case 3:
+                dificultadPartida = 3;
+                //Partida1.dificultad = 3;
+                System.out.println("Dificultad Difícil Seleccionada");
+                break;
+            case 0:
+                System.out.println("Cancelando...");
+                break;
+            default:
+                System.out.println("Opccion no válida");
+        }
+    }
+    
+    public static void switchJuego(int dificultadPartida, int eleccion, Interfaz hud){
+        Scanner sc = new Scanner(System.in);
+        
+        boolean salir2 = false;
+        boolean salirjuego = false;
+        
+        do {
+            System.out.println(hud.menuJuego(dificultadPartida));
+            eleccion = sc.nextInt(); sc.nextLine();
 
+            switch (eleccion) {//menuJuego
+                case 1://Selecciona Dificultad
+                    System.out.println(hud.menuDificultad());
+                    int opcion2 = sc.nextInt();
+                    sc.nextLine();
+                    
+                    //Llama al metodo del siguienre menú
+                    switchDificultad(dificultadPartida, opcion2);
+                    int num;
+                    break;
+                case 2://Empieza la Partida
+                    if (dificultadPartida != 0) {
+                        Jugador player = new Jugador("");
+                        Partida Partida1 = new Partida(player, dificultadPartida);
+                        Partida1.iniciarPartida(dificultadPartida);
+                        num = 0;
+                        
+                        do {
+                            if (num == Partida1.secreto.getNum()) {
+                                salirjuego = true;
+                            }
+                            System.out.println(hud.interfazJuego(Partida1));
+                            if (!salirjuego) {
+                                num = sc.nextInt();
+                                sc.nextLine();
+                            } else {
+                                sc.nextLine();
+                            }
+                            Partida1.introducirDato(num);
+                        } while (!salirjuego);
+                        /*
+                        System.out.println(hud.ponerNombreJugador());
+                        player.setNombre(sc.nextLine());
+                        System.out.println(hud.nombreJugador(player, Partida1));
+                        sc.nextLine();
+                        */
+                        salir2 = true;
+                    }else {
+                        System.out.println("Dificultad no Seleccionada");
+                    }
+                    break;
+                case 0://Cancelar
+                    System.out.println("Cancelando...");
+                    salir2 = true;
+                    break;
+                default:
+                    System.out.println("Opción no válida");
+            }
+        } while (!salir2);
+    }
+    
     /**
      * Main
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);;
+        Scanner sc = new Scanner(System.in);
+        
+        HashMap <String, Jugador> busquedaJugadores = new HashMap<>();
+        TreeSet <Jugador> ordenarJugadorFac = new TreeSet<>(new Comparator<Jugador>() {
+            @Override
+            public int compare(Jugador p1, Jugador p2) {
+                return Integer.compare(p1.mejorIntento, p2.mejorIntento);
+            }
+        });
+        
+        TreeSet <Jugador> ordenarJugadorMod = new TreeSet<>(new Comparator<Jugador>() {
+            @Override
+            public int compare(Jugador p1, Jugador p2) {
+                return Integer.compare(p1.mejorIntento, p2.mejorIntento);
+            }
+        });
+        
+        TreeSet <Jugador> ordenarJugadorDif = new TreeSet<>(new Comparator<Jugador>() {
+            @Override
+            public int compare(Jugador p1, Jugador p2) {
+                return Integer.compare(p1.mejorIntento, p2.mejorIntento);
+            }
+        });
+        
+        
         int dificultadPartida = 0;
         Interfaz hud = new Interfaz();
         
+<<<<<<< HEAD
         boolean salirjuego=false;
         //Jugador P1 = new Jugador("");
        
         //Partida Partida1 = new Partida(P1, dificultadPartida);
         
+=======
+>>>>>>> develop
         boolean salir = false;
         
         System.out.println(hud.espacioHud());
@@ -38,6 +154,7 @@ public class Main {
             
             switch(opcion){//menuInicio
                 case 1://Jugar Partida
+<<<<<<< HEAD
                     boolean salir2 = false;
                    
                     do{
@@ -114,6 +231,10 @@ public class Main {
                                 System.out.println("Opción no válida");
                         }
                     }while(!salir2);
+=======
+                    int eleccion = 0;
+                    switchJuego(dificultadPartida, eleccion, hud);
+>>>>>>> develop
                     
                     break;
                 case 2://Mostrar Tabla Puntuacion

@@ -8,7 +8,7 @@ package albertotostedamiantceneropro.Bitacora;
 import java.util.Date;
 
 /**
- *Esta clase es el contenido de Proyecto
+ * 
  * @author Alberto Hernández Medina
  */
 public class Anotacion{
@@ -17,6 +17,12 @@ public class Anotacion{
     String cabecera;
     String cuerpo;
 
+    /**
+     * Constructor de Anotacion
+     * @param nombre recibe el nombre de la anotacion
+     * @param cabecera recibe una pequeña frase que resuma el contenido
+     * @param cuerpo recibe todo el contenido de forma larga y tendida
+     */
     public Anotacion(String nombre, String cabecera, String cuerpo) {
         this.fechaAnotacion = new Date();
         this.nombre = nombre;

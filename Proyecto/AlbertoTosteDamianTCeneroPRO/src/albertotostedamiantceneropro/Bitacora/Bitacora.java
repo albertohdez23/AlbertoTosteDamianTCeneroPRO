@@ -26,6 +26,9 @@ public class Bitacora {
         proyectoFecha = new TreeSet<>();
     }
 
+    public Bitacora() {
+    }
+
     public String getNombre() {
         return nombre;
     }

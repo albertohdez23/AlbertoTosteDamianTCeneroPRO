@@ -46,6 +46,7 @@ public class Bitacora {
     }
 
     public TreeSet<Proyecto> getProyectoFecha() {
+        proyectoFecha.addAll(Proyecto.values());
         return proyectoFecha;
     }
 

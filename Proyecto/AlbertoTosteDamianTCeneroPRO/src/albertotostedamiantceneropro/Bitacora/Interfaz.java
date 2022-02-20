@@ -5,6 +5,7 @@
  */
 package albertotostedamiantceneropro.Bitacora;
 
+import java.util.HashMap;
 import java.util.TreeSet;
 
 /**
@@ -21,7 +22,7 @@ public class Interfaz {
      *
      * @return String con saltos de linea con la estructura del menu.
      */
-    public String menuInicio() {
+    public String menuInicio() { //hecho
         String res = "";
         res += "\n";
         res += "\n";
@@ -40,7 +41,7 @@ public class Interfaz {
         return res;
     }
 
-    public String menuCrearBitacora() {
+    public String menuCrearBitacora() {//hecho
 
         String res = "";
 
@@ -62,8 +63,8 @@ public class Interfaz {
         return res;
     }
 
-    public String menuMostrarBitacora(TreeSet<Proyecto> proyectoFecha) { // por hacer
-
+    public String menuMostrarBitacora(TreeSet<Proyecto> proyectoFecha) { //hecho
+        
         String res = "";
         
         for (Proyecto p: proyectoFecha) {
@@ -79,7 +80,7 @@ public class Interfaz {
      *
      * @return String con saltos de linea con la estructura del menu.
      */
-    public String menuProyectos() {
+    public String menuProyectos() {//hecho
         String res = "";
         res += "\n";
         res += "\n";
@@ -99,7 +100,7 @@ public class Interfaz {
         return res;
     }
 
-    public String menuElegirProyectos() {
+    public String menuElegirProyectos() {//hecho
         String res = "";
         res += "\n";
         res += "\n";
@@ -118,7 +119,7 @@ public class Interfaz {
         return res;
     }
 
-    public String menuMostrarProyecto(Proyecto p) {
+    public String menuMostrarProyecto(Proyecto p) {//hecho
         String res = "";
         String nombrePro = p.nombre;
         String descripcionPro = p.descripcion;
@@ -154,7 +155,7 @@ public class Interfaz {
         return res;
     }
 
-    public String menuCrearProyectos() {
+    public String menuCrearProyectos() {//hecho
         String res = "";
 
         res += "\n";
@@ -174,8 +175,29 @@ public class Interfaz {
 
         return res;
     }
+    
+    public String menuBuscarProyectos() {//hecho
+        String res = "";
 
-    public String menuModificarProyectos(Proyecto p) {
+        res += "\n";
+        res += "\n";
+        res += "\n";
+        res += "\n";
+        res += "+----------------------------------------------------+\n";
+        res += "|                                                    |\n";
+        res += "|                                                    |\n";
+        res += "|          Escribe el nombre del proyecto            |\n";
+        res += "|                                                    |\n";
+        res += "|                                                    |\n";
+        res += "+----------------------------------------------------+\n";
+        res += "\n";
+        res += "\n";
+        res += "\n";
+
+        return res;
+    }
+    
+    public String menuModificarProyectos(Proyecto p) {//hecho
         String res = "";
         String proyecto = p.getNombre();
         String esp = "";
@@ -204,7 +226,7 @@ public class Interfaz {
         return res;
     }
 
-    public String menuModificarNombre() {
+    public String menuModificarNombre() {//hecho
         String res = "";
         res += "\n";
         res += "\n";
@@ -224,7 +246,7 @@ public class Interfaz {
         return res;
     }
 
-    public String menuModificarDescripción() {
+    public String menuModificarDescripción() {//hecho
         String res = "";
         res += "\n";
         res += "\n";
@@ -244,7 +266,7 @@ public class Interfaz {
         return res;
     }
 
-    public String menuElimiarProyecto() {
+    public String menuElimiarProyecto() {//hecho
 
         String res = "";
 
@@ -266,7 +288,7 @@ public class Interfaz {
         return res;
     }
 
-    public String menuProyectoEliminado(Proyecto p) {
+    public String menuProyectoEliminado(Proyecto p) {//hehco
 
         String res = "";
         String proyecto = p.getNombre();
@@ -300,7 +322,7 @@ public class Interfaz {
      *
      * @return String con saltos de linea con la estructura del menu.
      */
-    public String menuAnotacion() {
+    public String menuAnotacion() {//hecho
         String res = "";
 
         res += "\n";
@@ -308,9 +330,10 @@ public class Interfaz {
         res += "\n";
         res += "\n";
         res += "+---------Menú de Anotación--------+\n";
-        res += "|1. Modificar anotación            |\n";
-        res += "|2. Eliminar anotación             |\n";
-        res += "|3. Mostrar anotación              |\n";
+        res += "|1. Crear Anotacion                |\n";
+        res += "|2. Modificar anotación            |\n";
+        res += "|3. Eliminar anotación             |\n";
+        res += "|4. Mostrar anotación              |\n";
         res += "|0. Cancelar.                      |\n";
         res += "+----------------------------------+\n";
         res += "\n";
@@ -320,7 +343,7 @@ public class Interfaz {
         return res;
     }
 
-    public String menuCrearAnotacionNombre() {
+    public String menuCrearAnotacionNombre() {//hecho
         String res = "";
 
         res += "\n";
@@ -340,8 +363,8 @@ public class Interfaz {
 
         return res;
     }
-
-    public String menuCrearAnotacionDescripcion() {
+    
+    public String menuCrearAnotacionCuerpo() {//hecho
         String res = "";
 
         res += "\n";
@@ -351,7 +374,28 @@ public class Interfaz {
         res += "+----------------------------------------------------+\n";
         res += "|                                                    |\n";
         res += "|                                                    |\n";
-        res += "|       Ponga la descripción de la anotación         |\n";
+        res += "|           Ponga el cuerpo de la anotación          |\n";
+        res += "|                                                    |\n";
+        res += "|                                                    |\n";
+        res += "+----------------------------------------------------+\n";
+        res += "\n";
+        res += "\n";
+        res += "\n";
+
+        return res;
+    }
+    
+    public String menuCrearAnotacionCabecera() {//hecho
+        String res = "";
+
+        res += "\n";
+        res += "\n";
+        res += "\n";
+        res += "\n";
+        res += "+----------------------------------------------------+\n";
+        res += "|                                                    |\n";
+        res += "|                                                    |\n";
+        res += "|          Ponga la cabecera de la anotación         |\n";
         res += "|                                                    |\n";
         res += "|                                                    |\n";
         res += "+----------------------------------------------------+\n";
@@ -362,7 +406,28 @@ public class Interfaz {
         return res;
     }
 
-    public String menuModificarAnotacionCuerpo() {
+    public String menuCrearProyectoDescripcion() {//hecho
+        String res = "";
+
+        res += "\n";
+        res += "\n";
+        res += "\n";
+        res += "\n";
+        res += "+----------------------------------------------------+\n";
+        res += "|                                                    |\n";
+        res += "|                                                    |\n";
+        res += "|         Ponga la descripción del proyecto          |\n";
+        res += "|                                                    |\n";
+        res += "|                                                    |\n";
+        res += "+----------------------------------------------------+\n";
+        res += "\n";
+        res += "\n";
+        res += "\n";
+
+        return res;
+    }
+
+    public String menuModificarAnotacionCuerpo() {//hecho
         String res = "";
 
         res += "\n";
@@ -383,7 +448,7 @@ public class Interfaz {
         return res;
     }
 
-    public String menuModificarAnotacionCabecera() {
+    public String menuModificarAnotacionCabecera() {//hecho
         String res = "";
 
         res += "\n";
@@ -404,7 +469,7 @@ public class Interfaz {
         return res;
     }
 
-    public String menuElimiarAnotacion() {
+    public String menuElimiarAnotacion() {//hecho
 
         String res = "";
 
@@ -415,7 +480,7 @@ public class Interfaz {
         res += "+----------------------------------------------------+\n";
         res += "|                                                    |\n";
         res += "|                                                    |\n";
-        res += "|       Ponga el nombre del proyecto a eliminar      |\n";
+        res += "|     Ponga el nombre de la anotacion a eliminar     |\n";
         res += "|                                                    |\n";
         res += "|                                                    |\n";
         res += "+----------------------------------------------------+\n";
@@ -426,7 +491,7 @@ public class Interfaz {
         return res;
     }
 
-    public String menuAnotacionEliminada(Anotacion a) {
+    public String menuAnotacionEliminada(Anotacion a) {//hecho
 
         String res = "";
         String anot = a.getNombre();
@@ -444,7 +509,7 @@ public class Interfaz {
         res += "+----------------------------------------------------+\n";
         res += "|                                                    |\n";
         res += "|                                                    |\n";
-        res += "|      Se ha eliminado el proyecto: " + anot + esp + "|\n";
+        res += "|      Se ha eliminado la anotacion: " + anot + esp + "|\n";
         res += "|                                                    |\n";
         res += "|                                                    |\n";
         res += "+----------------------------------------------------+\n";
@@ -455,7 +520,7 @@ public class Interfaz {
         return res;
 
     }
-    public String menuMostrarAnotaciones(Anotacion a) {
+    public String menuMostrarAnotaciones(Anotacion a) {//hecho
         String res = "";
         String nombreAnot = a.nombre;
         String descripcionAnot = a.cuerpo;

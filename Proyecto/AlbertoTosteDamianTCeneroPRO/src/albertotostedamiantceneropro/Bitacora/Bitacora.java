@@ -23,7 +23,7 @@ public class Bitacora {
     public Bitacora(String nombre) {
         this.nombre = nombre;
         Proyecto = new TreeMap<>();
-        proyectoFecha = new TreeSet<>(new TreeSet<>((Proyecto o1, Proyecto o2) -> o1.proyectoFecha - o2.proyectoFecha));
+        proyectoFecha = new TreeSet<>((Proyecto o1, Proyecto o2) -> o1.proyectoFecha - o2.proyectoFecha);
     }
 
     public Bitacora() {

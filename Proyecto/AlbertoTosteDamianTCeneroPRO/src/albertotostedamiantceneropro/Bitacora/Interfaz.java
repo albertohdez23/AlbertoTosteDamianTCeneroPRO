@@ -13,6 +13,9 @@ import java.util.TreeSet;
  */
 public class Interfaz {
 
+    
+    
+    
     /**
      * Muestra el menu de inicio.
      *
@@ -28,7 +31,6 @@ public class Interfaz {
         res += "|1. Crear una bitácora             |\n";
         res += "|2. Mostrar bitácora               |\n";
         res += "|3. Organizar proyecto             |\n";
-        res += "|4. Organizar anotaciones          |\n";
         res += "|0. Salir                          |\n";
         res += "+----------------------------------+\n";
         res += "\n";
@@ -89,6 +91,7 @@ public class Interfaz {
         res += "|2. Modificar Proyecto             |\n";
         res += "|3. Eliminar proyecto              |\n";
         res += "|4. Mostrar proyecto               |\n";
+        res += "|5. Organizar anotaciones          |\n";
         res += "|0. Cancelar                       |\n";
         res += "+----------------------------------+\n";
         res += "\n";
@@ -306,10 +309,9 @@ public class Interfaz {
         res += "\n";
         res += "\n";
         res += "+---------Menú de Anotación--------+\n";
-        res += "|1. Crear anotación                |\n";
-        res += "|2. Modificar anotación            |\n";
-        res += "|3. Eliminar anotación             |\n";
-        res += "|4. Mostrar anotación              |\n";
+        res += "|1. Modificar anotación            |\n";
+        res += "|2. Eliminar anotación             |\n";
+        res += "|3. Mostrar anotación              |\n";
         res += "|0. Cancelar.                      |\n";
         res += "+----------------------------------+\n";
         res += "\n";
@@ -361,7 +363,7 @@ public class Interfaz {
         return res;
     }
 
-    public String menuModificarAnotacionDescripcion() {
+    public String menuModificarAnotacionCuerpo() {
         String res = "";
 
         res += "\n";
@@ -371,7 +373,7 @@ public class Interfaz {
         res += "+----------------------------------------------------+\n";
         res += "|                                                    |\n";
         res += "|                                                    |\n";
-        res += "|       Ponga el nuevo nombre de la anotación        |\n";
+        res += "|       Ponga el nuevo cuerpo de la anotación        |\n";
         res += "|                                                    |\n";
         res += "|                                                    |\n";
         res += "+----------------------------------------------------+\n";
@@ -382,7 +384,7 @@ public class Interfaz {
         return res;
     }
 
-    public String menuModificarAnotacionNombre() {
+    public String menuModificarAnotacionCabecera() {
         String res = "";
 
         res += "\n";
@@ -392,7 +394,7 @@ public class Interfaz {
         res += "+----------------------------------------------------+\n";
         res += "|                                                    |\n";
         res += "|                                                    |\n";
-        res += "|       Ponga el nuevo nombre de la anotación        |\n";
+        res += "|      Ponga la nueva cabecera de la anotación       |\n";
         res += "|                                                    |\n";
         res += "|                                                    |\n";
         res += "+----------------------------------------------------+\n";

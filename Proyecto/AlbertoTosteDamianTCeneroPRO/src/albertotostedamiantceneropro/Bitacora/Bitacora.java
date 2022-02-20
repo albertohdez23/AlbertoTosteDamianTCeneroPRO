@@ -9,11 +9,13 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 
 /**
- * Esta clase define la estructura del buscador de proyectos creados
- * El usuario podrá tanto buscar, borrar y observar los proyectos creados
+ * Esta clase define la estructura del buscador de proyectos creados El usuario
+ * podrá tanto buscar, borrar y observar los proyectos creados
+ *
  * @author JDamian
  */
 public class Bitacora {
+
     String nombre;
     TreeMap<String, Proyecto> Proyecto;
     TreeSet<Proyecto> proyectoFecha;
@@ -36,23 +38,8 @@ public class Bitacora {
         return Proyecto;
     }
 
-    public void setProyecto(TreeMap<String, Proyecto> Proyecto) {
-        this.Proyecto = Proyecto;
-    }
-
     public TreeSet<Proyecto> getProyectoFecha() {
         return proyectoFecha;
     }
 
-    public void setProyectoFecha(TreeSet<Proyecto> proyectoFecha) {
-        this.proyectoFecha = proyectoFecha;
-    }
-
-    @Override
-    public String toString() {
-        return "Bitacora{" + "nombre=" + nombre +
-               ", Proyecto=" + Proyecto + 
-                ", proyectoFecha=" + proyectoFecha + '}';
-    }
-    
 }

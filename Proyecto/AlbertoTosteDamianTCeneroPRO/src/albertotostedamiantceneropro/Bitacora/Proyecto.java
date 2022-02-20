@@ -8,7 +8,7 @@ package albertotostedamiantceneropro.Bitacora;
 import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.Date;
-
+  
 /**
  * Esta clase define la estructura de los proyectos que introducirá el usuario
  * Así mismo, las anotaciones que se introduzcan sobre el proyecto, serán

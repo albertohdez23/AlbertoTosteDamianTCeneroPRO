@@ -10,7 +10,7 @@ Tiene varios modos de dificultad a elección del jugador, lo que varía en el ra
 Adicionalmente el juego cuenta con un ranking en el cual se guardan las puntuaciones obtenidas por los jugadores y un historial en el que revisar tus partidas jugadas.
 
 ### Problemas y anotaciones
-Tuvimos un problema principal en la class Main, ya que al empezar nos faltó de organización previa. Fuera de esto, no tuvimos ningún problema digno de mención.
+Tuvimos un problema principal en la class Main, ya que al empezar nos faltó algo de organización previa. Fuera de esto, no tuvimos ningún problema digno de mención.
 
 # Bitácora
 
@@ -21,7 +21,7 @@ Nuestra bitácora es un gestor en la cuál los usuarios podrán almacenar, modif
 
 ### Problemas y anotaciones
 Con este proyecto sí tuvimos varias dudas, ya que al no tener un enunciado escrito, nos vimos en la tesitura de preguntar repetidas veces a nuestro profesor sobre cómo quería que se estructurase la bitácora.
-- A la hora de crear las clases, la falta de uso de las estructuras de almacenamiento de datos, no nos decidíamos por cuáles escoger, lo que nos llevóa cambiarlas varias veces.
+- A la hora de crear las clases, debido a la falta de uso de las estructuras de almacenamiento de datos, no nos decidíamos por cuáles escoger, lo que nos llevó a cambiarlas varias veces.
 - Algunos métodos también nos dieron algunos problemas, pero nada que no pudiésemos solucionar consultando las dudas entre los integrantes del grupo.
 - El problema más destacable lo tuvimos en la creación de la interfaz que queríamos mostrarle al usuario, fuimos algo ambiciosos y quisimos abarcar todo lo que se nos ocurrió, pero al tener que mostrar tantas características también tuvimos que usar muchísimos menús, lo cual complicó adicionalmente el proyecto.
 

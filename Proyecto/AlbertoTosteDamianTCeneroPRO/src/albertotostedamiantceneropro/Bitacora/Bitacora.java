@@ -52,5 +52,5 @@ public class Bitacora {
     public void setProyectoFecha(TreeSet<Proyecto> proyectoFecha) {
         this.proyectoFecha = proyectoFecha;
     }
-    
+     
 }

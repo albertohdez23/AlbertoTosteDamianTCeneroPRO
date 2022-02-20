@@ -5,7 +5,7 @@
  */
 package albertotostedamiantceneropro.Bitacora;
 
-import java.util.TreeMap;
+import java.util.HashMap;
 import java.util.TreeSet;
 
 /**
@@ -17,13 +17,13 @@ import java.util.TreeSet;
 public class Bitacora {
 
     String nombre;
-    TreeMap<String, Proyecto> Proyecto;
+    HashMap<String, Proyecto> Proyecto;
     TreeSet<Proyecto> proyectoFecha;
 
     public Bitacora(String nombre) {
         this.nombre = nombre;
-        Proyecto = new TreeMap<>();
-        proyectoFecha = new TreeSet<>((Proyecto o1, Proyecto o2) -> o1.proyectoFecha - o2.proyectoFecha);
+        Proyecto = new HashMap<>();
+        proyectoFecha = new TreeSet<>((Proyecto o1, Proyecto o2) -> o1.getFecha().compareTo(o2.getFecha()));
     }
 
     public Bitacora() {
@@ -37,12 +37,20 @@ public class Bitacora {
         this.nombre = nombre;
     }
 
-    public TreeMap<String, Proyecto> getProyecto() {
+    public HashMap<String, Proyecto> getProyecto() {
         return Proyecto;
+    }
+
+    public void setProyecto(HashMap<String, Proyecto> Proyecto) {
+        this.Proyecto = Proyecto;
     }
 
     public TreeSet<Proyecto> getProyectoFecha() {
         return proyectoFecha;
     }
 
+    public void setProyectoFecha(TreeSet<Proyecto> proyectoFecha) {
+        this.proyectoFecha = proyectoFecha;
+    }
+    
 }

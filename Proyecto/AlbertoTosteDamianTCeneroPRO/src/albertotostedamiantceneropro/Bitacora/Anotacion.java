@@ -8,7 +8,7 @@ package albertotostedamiantceneropro.Bitacora;
 import java.util.Date;
 
 /**
- * 
+ * Nota que sirve de aviso, recordatorio, comentario o aclaración sobre un Proyecto.
  * @author Alberto Hernández Medina
  */
 public class Anotacion{

@@ -12,7 +12,7 @@ import java.util.Scanner;
  * la misma
  * @author Alejandro Toste
  * @author JDamian
- */
+ */ 
 public class Partida {
     NumAleatorio secreto;
     int secretoAEnviar;
@@ -128,22 +128,23 @@ public class Partida {
     public void terminarPartida(Jugador player) {
         this.nick = player;
         this.nick.setUltimoIntento(fallos);
+        
         switch (dificultad) {
-
+        
             case 1:
-                if (player.mejorIntentoF < player.ultimoIntento) {
+                if (player.mejorIntentoF > player.ultimoIntento) {
                     player.mejorIntentoF = fallos;
                 }
                 nick.historialFacil.add(fallos);
                 break;
             case 2:
-                if (player.mejorIntentoM < player.ultimoIntento) {
+                if (player.mejorIntentoM > player.ultimoIntento) {
                     player.mejorIntentoM = fallos;
                 }
                 nick.historialMedio.add(fallos);
                 break;
             case 3:
-                if (player.mejorIntentoD < player.ultimoIntento) {
+                if (player.mejorIntentoD > player.ultimoIntento) {
                     player.mejorIntentoD = fallos;
                 }
                 nick.historialDificil.add(fallos);

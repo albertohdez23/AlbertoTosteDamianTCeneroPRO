@@ -91,6 +91,15 @@ public class Main {
                         if (busquedaJugadores.containsKey(nombreJugador)) {
                             Partida1.terminarPartida((Jugador) busquedaJugadores.get(nombreJugador));
                             System.out.println(hud.nombreJugador((Jugador) busquedaJugadores.get(nombreJugador), Partida1));
+                             if (dificultadPartida == 1) {
+                                ordenarJugadorFac.add((Jugador)busquedaJugadores.get(nombreJugador));
+                            }
+                            if (dificultadPartida == 2) {
+                                ordenarJugadorMod.add((Jugador)busquedaJugadores.get(nombreJugador));
+                            }
+                            if (dificultadPartida == 3) {
+                                ordenarJugadorDiff.add((Jugador)busquedaJugadores.get(nombreJugador));
+                            }
                             sc.nextLine();
                         } else {
                             Jugador player = new Jugador("");

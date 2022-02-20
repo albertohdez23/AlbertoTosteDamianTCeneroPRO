@@ -8,28 +8,31 @@ package AdivinarNumero;
 import java.util.ArrayList;
 
 /**
- * En esta clase se almacena la informacion del Jugador
- * nombre: Nos indica el nombre del jugador
- * partidasJugadas: Nos indica el numero de partidas que ha jugado en total
- * mejorIntento: Muestra la menor cantidad de intentos necesarios para adivinar
- * ultimoIntento: Esta variable almacena temporalmente los resultados de la ultima partida jugada
- * historial: Guarda todas las puntuaciones del jugador
+ * En esta clase se almacena la informacion del Jugador nombre: Nos indica el
+ * nombre del jugador partidasJugadas: Nos indica el numero de partidas que ha
+ * jugado en total mejorIntento: Muestra la menor cantidad de intentos
+ * necesarios para adivinar ultimoIntento: Esta variable almacena temporalmente
+ * los resultados de la ultima partida jugada historial: Guarda todas las
+ * puntuaciones del jugador
+ *
  * @author Alberto Hernández Medina
  * @author JDamian
  */
 public class Jugador {
+
     String nombre;
     int partidasJugadas;
     int mejorIntentoF;
     int mejorIntentoM;
     int mejorIntentoD;
     int ultimoIntento;
-    ArrayList<Integer> historialFacil; 
+    ArrayList<Integer> historialFacil;
     ArrayList<Integer> historialMedio;
     ArrayList<Integer> historialDificil;
-    
+
     /**
      * Constructor que recibe un parametro tipo String
+     *
      * @param nombre: Asigna el nombre del jugador
      */
     public Jugador(String nombre) {
@@ -37,6 +40,9 @@ public class Jugador {
         historialFacil = new ArrayList();
         historialMedio = new ArrayList();
         historialDificil = new ArrayList();
+        mejorIntentoF = Integer.MAX_VALUE;
+        mejorIntentoM = Integer.MAX_VALUE;
+        mejorIntentoD = Integer.MAX_VALUE;
     }
 
     public String getNombre() {
@@ -45,16 +51,16 @@ public class Jugador {
 
     public void setNombre(String nombre) {
         if (nombre.length() > 4) {
-             this.nombre = (nombre.substring(0,4)).toUpperCase();
-        }else if (nombre.length() < 4){
+            this.nombre = (nombre.substring(0, 4)).toUpperCase();
+        } else if (nombre.length() < 4) {
             for (int i = 0; i < 4 - nombre.length(); i++) {
                 nombre += " ";
             }
             this.nombre = nombre.toUpperCase();
-        }else{
+        } else {
             this.nombre = nombre.toUpperCase();
         }
-        
+
     }
 
     public int getPartidasJugadas() {
@@ -65,7 +71,6 @@ public class Jugador {
         this.partidasJugadas = partidasJugadas;
     }
 
- 
     public int getUltimoIntento() {
         return ultimoIntento;
     }
@@ -121,5 +126,5 @@ public class Jugador {
     public void setMejorIntentoD(int mejorIntentoD) {
         this.mejorIntentoD = mejorIntentoD;
     }
-    
+
 }

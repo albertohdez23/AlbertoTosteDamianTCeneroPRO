@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package albertotostedamiantceneropro;
+package AdivinarNumero;
 
 import java.util.ArrayList;
 
@@ -45,14 +45,14 @@ public class Jugador {
 
     public void setNombre(String nombre) {
         if (nombre.length() > 4) {
-             this.nombre = nombre.substring(0,4);
+             this.nombre = (nombre.substring(0,4)).toUpperCase();
         }else if (nombre.length() < 4){
             for (int i = 0; i < 4 - nombre.length(); i++) {
                 nombre += " ";
             }
-            this.nombre = nombre;
+            this.nombre = nombre.toUpperCase();
         }else{
-            this.nombre = nombre;
+            this.nombre = nombre.toUpperCase();
         }
         
     }
@@ -96,6 +96,30 @@ public class Jugador {
 
     public void setHistorialDificil(int fallos) {
         this.historialDificil.add(fallos);
+    }
+
+    public int getMejorIntentoF() {
+        return mejorIntentoF;
+    }
+
+    public int getMejorIntentoM() {
+        return mejorIntentoM;
+    }
+
+    public int getMejorIntentoD() {
+        return mejorIntentoD;
+    }
+
+    public void setMejorIntentoF(int mejorIntentoF) {
+        this.mejorIntentoF = mejorIntentoF;
+    }
+
+    public void setMejorIntentoM(int mejorIntentoM) {
+        this.mejorIntentoM = mejorIntentoM;
+    }
+
+    public void setMejorIntentoD(int mejorIntentoD) {
+        this.mejorIntentoD = mejorIntentoD;
     }
     
 }

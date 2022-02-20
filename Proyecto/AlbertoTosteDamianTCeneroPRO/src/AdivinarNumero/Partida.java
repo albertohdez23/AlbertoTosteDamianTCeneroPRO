@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package albertotostedamiantceneropro;
+package AdivinarNumero;
 
 import java.util.Scanner;
 
@@ -131,12 +131,21 @@ public class Partida {
         switch (dificultad) {
 
             case 1:
+                if (player.mejorIntentoF < player.ultimoIntento) {
+                    player.mejorIntentoF = fallos;
+                }
                 nick.historialFacil.add(fallos);
                 break;
             case 2:
+                if (player.mejorIntentoM < player.ultimoIntento) {
+                    player.mejorIntentoM = fallos;
+                }
                 nick.historialMedio.add(fallos);
                 break;
             case 3:
+                if (player.mejorIntentoD < player.ultimoIntento) {
+                    player.mejorIntentoD = fallos;
+                }
                 nick.historialDificil.add(fallos);
                 break;
         }

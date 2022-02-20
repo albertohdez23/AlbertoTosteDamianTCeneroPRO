@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package albertotostedamiantceneropro;
+package AdivinarNumero;
 
 import java.util.Comparator;
 import java.util.HashMap;
@@ -44,7 +44,7 @@ public class Main {
         return dificultadPartida;
     }
 
-    public static void switchJuego(int eleccion, Interfaz hud, HashMap busquedaJugadores) {
+    public static void switchJuego(int eleccion, Interfaz hud, HashMap busquedaJugadores,TreeSet<Jugador> ordenarJugadorFac,TreeSet<Jugador> ordenarJugadorMod,TreeSet<Jugador> ordenarJugadorDiff) {
         Scanner sc = new Scanner(System.in);
 
         boolean salir2 = false;
@@ -86,7 +86,7 @@ public class Main {
                             Partida1.introducirDato(num);
                         } while (!salirjuego);
                         System.out.println(hud.ponerNombreJugador());
-                        String nombreJugador = sc.nextLine();
+                        String nombreJugador = sc.nextLine().toUpperCase();
 
                         if (busquedaJugadores.containsKey(nombreJugador)) {
                             Partida1.terminarPartida((Jugador) busquedaJugadores.get(nombreJugador));
@@ -98,6 +98,15 @@ public class Main {
                             Partida1.terminarPartida(player);
                             System.out.println(hud.nombreJugador(player, Partida1));
                             busquedaJugadores.put(player.getNombre(), player);
+                            if (dificultadPartida == 1) {
+                                ordenarJugadorFac.add(player);
+                            }
+                            if (dificultadPartida == 2) {
+                                ordenarJugadorMod.add(player);
+                            }
+                            if (dificultadPartida == 3) {
+                                ordenarJugadorDiff.add(player);
+                            }
                             sc.nextLine();
                         }
 
@@ -125,26 +134,11 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         HashMap<String, Jugador> busquedaJugadores = new HashMap<>();
-        TreeSet<Jugador> ordenarJugadorFac = new TreeSet<>(new Comparator<Jugador>() {
-            @Override
-            public int compare(Jugador p1, Jugador p2) {
-                return Integer.compare(p1.mejorIntentoF, p2.mejorIntentoF);
-            }
-        });
+        TreeSet<Jugador> ordenarJugadorFac = new TreeSet<>((Jugador p1, Jugador p2) -> Integer.compare(p1.mejorIntentoF, p2.mejorIntentoF));
 
-        TreeSet<Jugador> ordenarJugadorMod = new TreeSet<>(new Comparator<Jugador>() {
-            @Override
-            public int compare(Jugador p1, Jugador p2) {
-                return Integer.compare(p1.mejorIntentoM, p2.mejorIntentoM);
-            }
-        });
+        TreeSet<Jugador> ordenarJugadorMod = new TreeSet<>((Jugador p1, Jugador p2) -> Integer.compare(p1.mejorIntentoM, p2.mejorIntentoM));
 
-        TreeSet<Jugador> ordenarJugadorDif = new TreeSet<>(new Comparator<Jugador>() {
-            @Override
-            public int compare(Jugador p1, Jugador p2) {
-                return Integer.compare(p1.mejorIntentoD, p2.mejorIntentoD);
-            }
-        });
+        TreeSet<Jugador> ordenarJugadorDif = new TreeSet<>((Jugador p1, Jugador p2) -> Integer.compare(p1.mejorIntentoD, p2.mejorIntentoD));
 
         int dificultadPartida = 0;
         Interfaz hud = new Interfaz();
@@ -161,7 +155,7 @@ public class Main {
 
             switch (opcion) {//menuInicio
                 case 1://Jugar Partida
-                    switchJuego(0, hud, busquedaJugadores);
+                    switchJuego(0, hud, busquedaJugadores,ordenarJugadorFac,ordenarJugadorMod,ordenarJugadorDif);
                     break;
                 case 2://Mostrar Tabla Puntuacion
                     if(busquedaJugadores.isEmpty()) {
@@ -169,7 +163,7 @@ public class Main {
                             sc.nextLine();
                         }else{
                         System.out.println(hud.BuscarJugador());
-                        String identificador = sc.nextLine();
+                        String identificador = sc.nextLine().toUpperCase();
                         if (busquedaJugadores.containsKey(identificador)) {
                             System.out.println(hud.Historial(busquedaJugadores.get(identificador)));
                             sc.nextLine();
@@ -179,10 +173,16 @@ public class Main {
                         }
                     }
                     break;
-                case 3://Mostrar Ranking
-
+                case 3://Mostrar Ranking   
+                    System.out.println(hud.RankingFacil(ordenarJugadorFac));
+                    sc.nextLine();
+                    System.out.println(hud.RankingMedia(ordenarJugadorMod));
+                    sc.nextLine();
+                    System.out.println(hud.RankingDificil(ordenarJugadorDif));
+                    sc.nextLine();
                     break;
                 case 0://Salir
+                    System.out.println(hud.SalirJuego());
                     salir = true;
                     break;
                 default:

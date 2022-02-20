@@ -28,9 +28,8 @@ public class Interfaz {
         res += "\n";
         res += "\n";
         res += "+---------------Menú---------------+\n";
-        res += "|1. Crear una bitácora             |\n";
-        res += "|2. Mostrar bitácora               |\n";
-        res += "|3. Organizar proyecto             |\n";
+        res += "|1. Mostrar bitácora               |\n";
+        res += "|2. Organizar proyecto             |\n";
         res += "|0. Salir                          |\n";
         res += "+----------------------------------+\n";
         res += "\n";

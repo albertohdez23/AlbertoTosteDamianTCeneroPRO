@@ -5,9 +5,9 @@
  */
 package albertotostedamiantceneropro.Bitacora;
 
-import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.Date;
+import java.util.HashMap;
 
 /**
  * Esta clase define la estructura de los proyectos que introducirá el usuario
@@ -17,18 +17,17 @@ import java.util.Date;
  * @author JDamian
  */
 public class Proyecto {
-
     String nombre;
     String descripcion;
     Date fecha;
-    TreeMap<String, Anotacion> anotacion;
+    HashMap<String, Anotacion> anotacion;
     TreeSet<Anotacion> anotacionesOrdenPorFecha;
 
     public Proyecto(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        anotacion = new TreeMap<>();
-        anotacionesOrdenPorFecha = new TreeSet<>((Anotacion o1, Anotacion o2) -> o1.votos - o2.votos);;
+        anotacion = new HashMap<>();
+        anotacionesOrdenPorFecha = new TreeSet<>((Anotacion a1, Anotacion a2) -> a1.getFechaAnotacion().compareTo(a2.getFechaAnotacion()));
     }
 
     public Proyecto() {
@@ -58,7 +57,7 @@ public class Proyecto {
         this.fecha = fecha;
     }
 
-    public TreeMap<String, Anotacion> getAnotacion() {
+    public HashMap<String, Anotacion> getAnotacion() {
         return anotacion;
     }
 

@@ -48,6 +48,22 @@ public class Anotacion{
     public String getCuerpo() {
         return cuerpo;
     }
+
+    public void setFechaAnotacion(Date fechaAnotacion) {
+        this.fechaAnotacion = fechaAnotacion;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setCabecera(String cabecera) {
+        this.cabecera = cabecera;
+    }
+
+    public void setCuerpo(String cuerpo) {
+        this.cuerpo = cuerpo;
+    }
     
     //No hay toString ya que de eso se encargará otra clase
 }
